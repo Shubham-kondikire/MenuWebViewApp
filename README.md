@@ -267,8 +267,13 @@ screenshots/
 ```
 
 - **Screenshot 1:** Google Home Page
+<img width="732" height="1600" alt="exp8 (3)" src="https://github.com/user-attachments/assets/5aedf073-6d0e-4d90-b65f-856df7549caa" />
+
 - **Screenshot 2:** Wikipedia Page
+<img width="732" height="1600" alt="exp8 (2)" src="https://github.com/user-attachments/assets/ab910582-685d-4be6-b476-36cf0ba3352e" />
+
 - **Screenshot 3:** About Dialog displaying student details
+<img width="732" height="1600" alt="exp8 (1)" src="https://github.com/user-attachments/assets/1d6caa00-d59d-4799-b397-53c8ab71bc2c" />
 
 ---
 
