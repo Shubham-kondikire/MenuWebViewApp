@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+id menu_exit
+id menu_github
+id menu_home
+id menu_refresh
+id menu_wikipedia
+id progressBar
+id toolbar
+id webView
+layout activity_main
+menu main_menu
+mipmap ic_launcher
+string app_name
+style Theme.MenuWebView
