@@ -1,133 +1,277 @@
-# Experiment 8: Implement Menus and WebView in an Android Application
+# Experiment 8 – Implement Menus and WebView in an Android Application
 
-**Name:** Shubham Shivaji Kondikire
-**USN:** 25MCAR0102
-**Course:** MCA, Jain (Deemed-to-be University)
+## Student Details
+- **Name:** Shubham Shivaji Kondikire
+- **USN:** 25MCAR0102
+- **Experiment No.:** 8
+- **Title:** Implement Menus and WebView in an Android Application
+
+## 1. Aim
+To develop an Android application that demonstrates the implementation of an Options Menu and WebView.
+
+The application allows users to browse websites inside the Android application, perform searches, navigate between pages, refresh the current page, and use menu options.
+
+## 2. Concept / Technology Used
+
+### Android Options Menu
+An Options Menu provides additional actions through the three-dot menu in the application's toolbar.
+
+The menu contains:
+- Home
+- Open Wikipedia
+- Refresh Page
+- About this Experiment
+- Exit
+
+The menu is created using an XML menu resource, and its actions are handled in `MainActivity.kt`.
+
+### WebView
+WebView is an Android component that allows web pages to be displayed directly inside an Android application.
+
+In this experiment, websites such as Google and Wikipedia are displayed inside the application's WebView instead of opening a separate browser application.
+
+### Address / Search Bar
+The application provides an address bar where users can enter:
+- A complete website URL
+- A domain name
+- Search text
+
+**Examples:**
+- `https://www.wikipedia.org`
+- `Android WebView`
+
+If search text is entered, the application performs a Google search.
+
+### Navigation History
+The application provides Back and Forward buttons. These buttons use the WebView browsing history to navigate between previously visited pages.
+
+## 3. Scenario
+The application is designed as a simple Web Explorer.
+
+A user can:
+- Open Google using the Home button.
+- Open Wikipedia using the Wikipedia button.
+- Enter a website address.
+- Search for information using the address bar.
+- Navigate backward and forward through browsing history.
+- Refresh the current web page using the Options Menu.
+- View experiment and student information using the About option.
+- Exit the application using the Exit option.
+
+This scenario demonstrates the practical use of Android Menus and WebView.
+
+## 4. Features of the Application
+
+| Feature | Description |
+|---|---|
+| WebView | Displays web pages inside the application |
+| Address/Search Bar | Accepts website URLs and search text |
+| GO Button | Opens the entered website or search |
+| Home | Opens Google |
+| Wikipedia | Opens Wikipedia |
+| Back | Navigates to the previous page |
+| Forward | Navigates to the next page |
+| Refresh | Reloads the current web page |
+| About | Displays experiment and student information |
+| Exit | Closes the application |
+| Loading Status | Displays the current page loading status |
+
+## 5. Project Folder Structure
+
+```text
+MenuWebViewMAD8/
+│
+├── app/
+│   └── src/
+│       └── main/
+│           ├── java/
+│           │   └── com/
+│           │       └── example/
+│           │           └── menuwebviewmad8/
+│           │               └── MainActivity.kt
+│           │
+│           └── res/
+│               ├── drawable/
+│               │   ├── bg_address.xml
+│               │   ├── bg_button_light.xml
+│               │   └── bg_button_primary.xml
+│               │
+│               ├── layout/
+│               │   └── activity_main.xml
+│               │
+│               ├── menu/
+│               │   └── main_menu.xml
+│               │
+│               └── values/
+│                   ├── colors.xml
+│                   ├── strings.xml
+│                   └── themes.xml
+│
+├── screenshots/
+│   ├── test-case-1-home.png
+│   ├── test-case-2-wikipedia.png
+│   └── test-case-3-about.png
+│
+├── README.md
+└── ...
+```
+
+## 6. Important Files
+
+### MainActivity.kt
+`MainActivity.kt` contains the main application logic. It handles:
+- WebView configuration
+- Website loading
+- Search functionality
+- Home and Wikipedia buttons
+- Back and Forward navigation
+- Options Menu
+- Refresh functionality
+- About dialog
+- Exit functionality
+- WebView loading status
+
+### activity_main.xml
+This file defines the application's user interface. It contains:
+- Toolbar
+- Address/Search field
+- GO button
+- Home button
+- Wikipedia button
+- Back button
+- Forward button
+- Progress bar
+- WebView
+- Page status
+
+### main_menu.xml
+This XML file defines the Options Menu items used in the application.
+
+### Drawable Files
+The drawable XML files provide backgrounds and styling for the address bar, primary button, and navigation buttons.
+
+## 7. Test Cases
+
+### Test Case 1 – Open Home Page
+
+**Objective:** To verify that the Home button opens Google inside the WebView.
+
+**Steps:**
+1. Launch the application.
+2. Tap the Home button.
+3. Observe the WebView.
+
+**Expected Result:** Google should open successfully inside the application's WebView.
+
+**Screenshot:** `screenshots/test-case-1-home.png`
+
+### Test Case 2 – Open Wikipedia
+
+**Objective:** To verify that the Wikipedia button opens Wikipedia inside the WebView.
+
+**Steps:**
+1. Launch the application.
+2. Tap the Wikipedia button.
+3. Observe the WebView.
+
+**Expected Result:** Wikipedia should open successfully inside the application's WebView.
+
+**Screenshot:** `screenshots/test-case-2-wikipedia.png`
+
+### Test Case 3 – Verify Options Menu and Student Details
+
+**Objective:** To verify the Options Menu and display the student's Name and USN.
+
+**Steps:**
+1. Launch the application.
+2. Tap the three-dot menu in the toolbar.
+3. Select About this Experiment.
+4. Observe the About dialog.
+
+**Expected Result:** The dialog should display the experiment details and student information.
+
+The dialog should contain:
+
+- **Experiment 8:** Implement Menus and WebView
+- **Student:** Shubham Shivaji Kondikire
+- **USN:** 25MCAR0102
+
+**Screenshot:** `screenshots/test-case-3-about.png`
+
+### Test Case 4 – Search Using Address Bar
+
+**Input:** `Android WebView`
+
+**Expected Result:** Google search results for "Android WebView" should open inside the WebView.
+
+### Test Case 5 – Back and Forward Navigation
+
+**Steps:**
+1. Open Google.
+2. Open Wikipedia.
+3. Press the Back button.
+4. Press the Forward button.
+
+**Expected Result:** The WebView should correctly navigate through the browsing history.
+
+### Test Case 6 – Refresh Page
+
+**Steps:**
+1. Open any web page.
+2. Open the three-dot Options Menu.
+3. Select Refresh Page.
+
+**Expected Result:** The current web page should reload successfully.
+
+## 8. Output
+The final application provides a simple Web Explorer interface containing:
+- Android Options Menu
+- Embedded WebView
+- Address/Search bar
+- GO button
+- Home button
+- Wikipedia button
+- Back button
+- Forward button
+- Refresh option
+- About dialog
+- Exit option
+- Loading status
+
+The web page is displayed directly inside the Android application using WebView.
+
+## 9. Conclusion
+Experiment 8 was successfully implemented to demonstrate Menus and WebView in an Android application.
+
+The application demonstrates how an Android application can display web content using WebView and provide browser-like controls using buttons and an Options Menu.
+
+The experiment also demonstrates:
+- Android UI design
+- WebView implementation
+- Options Menu implementation
+- Event handling
+- Website navigation
+- Navigation history
+- Dialog creation
+- Page refresh functionality
+
+## 10. Screenshots
+Add the following screenshots to the project for submission:
+
+```text
+screenshots/
+│
+├── test-case-1-home.png
+├── test-case-2-wikipedia.png
+└── test-case-3-about.png
+```
+
+- **Screenshot 1:** Google Home Page
+- **Screenshot 2:** Wikipedia Page
+- **Screenshot 3:** About Dialog displaying student details
 
 ---
 
-## 1. Experiment Overview
-
-This experiment demonstrates two core Android UI concepts working together in a
-single app:
-
-1. **Options Menu** — the menu that appears from the toolbar (3-dot icon),
-   used to trigger app-wide actions.
-2. **WebView** — an embedded browser component that loads and displays web
-   content directly inside the app, without needing the user's phone browser.
-
-## 2. Concept / Technology Behind It
-
-- **Options Menu (`android.view.Menu`)**: Defined declaratively in an XML file
-  (`res/menu/main_menu.xml`), then inflated into the Activity's toolbar via
-  `onCreateOptionsMenu()`. Each tap is routed through `onOptionsItemSelected()`,
-  which checks the tapped item's ID and performs the matching action. This is
-  the standard Android pattern for global actions (Settings, Refresh, About,
-  Exit, etc.) that don't belong to one specific screen element.
-
-- **WebView (`android.webkit.WebView`)**: A view that renders web pages using
-  the device's WebView engine (Chromium-based on modern Android). Key pieces:
-  - `WebViewClient` — intercepts navigation so links open **inside** the app
-    instead of launching an external browser.
-  - `WebChromeClient` — reports browser-chrome events like load progress,
-    used here to drive an on-screen progress bar.
-  - `loadUrl()` — loads a page from the internet.
-  - `loadData()` — loads raw HTML from a String, with no internet needed
-    (used for the local "My Info" page in this app).
-  - `INTERNET` permission in `AndroidManifest.xml` — required for any network
-    page to load.
-
-## 3. Scenario Used to Demonstrate It
-
-The app is a **mini in-app browser**. The toolbar's Options Menu offers 5
-choices, each changing what the WebView displays:
-
-| Menu Item   | Action |
-|-------------|--------|
-| Home        | Loads `https://www.google.com` |
-| Wikipedia   | Loads `https://www.wikipedia.org` |
-| GitHub      | Loads `https://www.github.com` |
-| My Info     | Loads a local (offline) HTML page showing the student's Name & USN |
-| Refresh     | Reloads whatever page is currently open, shows a confirmation Toast |
-| Exit        | Closes the app |
-
-The device Back button is overridden to step back through the WebView's own
-browsing history first (like a real browser), and only closes the app once
-there's no more history left.
-
-## 4. Project / File Structure
-
-```
-MenuWebViewApp/
-├── app/
-│   ├── build.gradle                # App-level Gradle config (SDK versions, dependencies)
-│   └── src/main/
-│       ├── AndroidManifest.xml     # Declares INTERNET permission + MainActivity
-│       ├── java/com/example/menuwebview/
-│       │   └── MainActivity.kt     # All logic: menu handling + WebView setup
-│       └── res/
-│           ├── layout/
-│           │   └── activity_main.xml   # Toolbar + ProgressBar + WebView layout
-│           ├── menu/
-│           │   └── main_menu.xml       # Options Menu items (Home/Wikipedia/GitHub/My Info/Refresh/Exit)
-│           └── values/
-│               ├── strings.xml         # App name string
-│               └── themes.xml          # App theme/colors
-├── build.gradle                    # Project-level Gradle config
-└── settings.gradle                 # Module registration
-```
-
-**What each key file does:**
-- `main_menu.xml` → defines *what* menu items exist.
-- `MainActivity.kt` → defines *what happens* when each item is tapped
-  (`onOptionsItemSelected`) and *how* the WebView behaves (`onCreate`,
-  `webViewClient`, `webChromeClient`, `onBackPressed`).
-- `activity_main.xml` → defines *where* the WebView and progress bar sit on
-  screen, under the toolbar.
-
-## 5. Output Screenshot
-
-*(Insert a screenshot here showing the app open with the Home page loaded
-and the Options Menu visible.)*
-
-`![App Output](screenshots/output.png)`
-
-## 6. Test Cases
-
-### Test Case 1 — Menu navigation loads correct page
-**Steps:** Launch app → tap menu (⋮) → select "Wikipedia"
-**Expected result:** WebView loads wikipedia.org, progress bar shows briefly.
-**Screenshot:** *(insert screenshot here — `screenshots/testcase1.png`)*
-
-### Test Case 2 — Refresh reloads current page
-**Steps:** With any page open → tap menu (⋮) → select "Refresh"
-**Expected result:** Page reloads, a Toast "Page refreshed" appears.
-**Screenshot:** *(insert screenshot here — `screenshots/testcase2.png`)*
-
-### Test Case 3 — My Info page shows student details (Name & USN)
-**Steps:** Tap menu (⋮) → select "My Info"
-**Expected result:** WebView shows an offline page with:
-- Name: Shubham Shivaji Kondikire
-- USN: 25MCAR0102
-**Screenshot:** *(insert screenshot here — `screenshots/testcase3.png`)*
-👉 This is the test case that satisfies the "USN and Name" requirement.
-
-## 7. How to Run
-1. Open the project in Android Studio → let Gradle sync.
-2. Run on an emulator or physical device (internet needed for Home/Wikipedia/GitHub; My Info works offline).
-3. Tap the 3-dot menu (top-right) to try each option.
-
-## 8. Viva Questions
-- **Q: Difference between Options Menu and Context Menu?**
-  Options Menu (this experiment) appears from the toolbar and applies to the
-  whole Activity. Context Menu appears on a long-press of a specific view.
-- **Q: Why override `onBackPressed()`?**
-  So Back steps through WebView history first, like a real browser, instead
-  of immediately closing the Activity.
-- **Q: Why does WebView need the INTERNET permission?**
-  Without it, the app cannot make any network request, so remote pages
-  (Home/Wikipedia/GitHub) won't load — though `loadData()` pages like "My Info"
-  still work since they don't need network access.
-- **Q: `WebViewClient` vs `WebChromeClient`?**
-  `WebViewClient` handles page navigation (keeps links inside the app).
-  `WebChromeClient` handles browser-chrome events (load progress, JS dialogs).
+**Student Name:** Shubham Shivaji Kondikire  
+**USN:** 25MCAR0102  
+**Experiment No.:** 8
